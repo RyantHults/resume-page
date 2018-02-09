@@ -93,6 +93,11 @@
                         var href = $(this).attr('href');
                         jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
                     });
+
+                    $('#nav-h-container ul>li>a').on('click', function(){
+                        var href = $(this).attr('href');
+                        jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
+                    });
                 });
             })(jQuery);
         </script>
@@ -118,6 +123,10 @@
 
             .container-fluid {
                 padding: 0px 0px 0px 0px !important;
+            }
+
+            .header {
+                font-size: 50px;
             }
 
             #Navigation {
@@ -331,6 +340,10 @@
             }
 
             @media only screen and (max-width: 768px) {
+                .header {
+                    margin-top: 50px;
+                }
+                
                 .landing-hr {
                     width: 15em;
                 }
@@ -342,6 +355,18 @@
                 #nav-h-container {
                     visibility: visible;
                 }
+
+                #left-profile {
+                    margin-bottom: 25px;
+                    text-align: center;
+                }
+
+                #right-profile {
+                    margin-top: 50px;
+                    text-align: center;
+                }
+                
+
             }
 
         </style>
@@ -386,19 +411,19 @@
                 <div class="container" id="nav-h-container">
                     <ul class="list-unstyled list-inline text-center d-flex justify-content-center align-items-center" id="nav-h-list">
                         <li class="list-inline-item text-center nav-link-horizontal" id="">
-                            <a class="" href="#Profile">Profile</a>
+                            <a class="nav-link" href="#Profile">Profile</a>
                         </li>
                         <li class="list-inline-item text-center nav-link-horizontal" id="">
-                            <a class="" href="#Experience">Experience</a>
+                            <a class="nav-link" href="#Experience">Experience</a>
                         </li>
                         <li class="list-inline-item text-center nav-link-horizontal" id="">
-                            <a class="" href="#Skills">Skills</a>
+                            <a class="nav-link" href="#Skills">Skills</a>
                         </li>
                         <li class="list-inline-item text-center nav-link-horizontal" id="">
-                            <a class="" href="#Portfolio">Portfolio</a>
+                            <a class="nav-link" href="#Portfolio">Portfolio</a>
                         </li>
                         <li class="list-inline-item text-center nav-link-horizontal" id="">
-                            <a class="" href="#Contact">Contact</a>
+                            <a class="nav-link" href="#Contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -406,22 +431,22 @@
 
             <!-- Profile Section -->
             <div class="row" id="Profile">
-                <h2 class="text-center">Profile</h2>
+                <h2 class="text-center header">Profile</h2>
                 <br />
-                <div class="col-xs-3 col-sm-2 col-lg-2 col-sm-offset-2 col-lg-offset-2 left-profile text-right">
+                <div class="col-xs-8 col-sm-2 col-lg-2 col-xs-offset-2 col-sm-offset-2 col-lg-offset-2 text-right" id="left-profile">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
-                <div class="col-xs-6 col-sm-4 col-lg-4 profile-img">
+                <div class="col-xs-8 col-sm-4 col-lg-4 col-xs-offset-2 col-sm-offset-0 profile-img">
                     <img class="img-responsive img-circle center-block" id="profile-image" src="https://ryanthults.github.io/assets/images/me2.jpg" alt="A picture of me" />
                 </div>
-                <div class="col-xs-3 col-sm-2 col-lg-2 right-profile text-left">
+                <div class="col-xs-8 col-sm-2 col-lg-2 col-xs-offset-2 col-sm-offset-0 text-left" id="right-profile">
                     <p>Proin eget suscipit mi, porttitor laoreet nibh. In dolor odio, sagittis nec est eu, faucibus mattis tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
                 </div>
             </div>
 
             <!-- Experience Section -->
             <div class="row" id="Experience">
-                <h2 class="text-center">Experience</h2>
+                <h2 class="text-center header">Experience</h2>
                 <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
                     <h4>Education</h4>
                     <table class="table">
@@ -494,9 +519,9 @@
 
             <!-- Skills Section -->
             <div class="row" id="Skills">
-                <h2 class="text-center">Skills</h2>
+                <h2 class="text-center header">Skills</h2>
                 <br />
-                <div class="col-xs-8 col-lg-6 col-xs-offset-2 col-lg-offset-3 skill-tables">
+                <div class="col-xs-10 col-lg-6 col-xs-offset-1 col-lg-offset-3 skill-tables">
                     <h4>Programming Languages</h4> 
                     <div class="row">         
                         <div class="col-lg-6">             
@@ -647,7 +672,7 @@
 
             <!-- Portfolio Section -->
             <div class="row" id="Portfolio">
-                <h2 class="text-center">Portfolio</h2>
+                <h2 class="text-center header">Portfolio</h2>
                 <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
                     <br />
                     <div class="row">
