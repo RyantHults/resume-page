@@ -111,13 +111,18 @@
                             elementh.children('a').css('color','white');
                         }
                     });
-                      
+                    //desktop navbar scroll animation
                     $('#nav-container ul>li.nav-box>a').on('click', function(){
                         var href = $(this).attr('href');
                         jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
                     });
 
+                    //mobile navbar scroll animation
                     $('#nav-h-container ul>li>a').on('click', function(){
+                        var href = $(this).attr('href');
+                        jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
+                    });
+                    $('#nav-indicator a').on('click', function(){
                         var href = $(this).attr('href');
                         jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
                     });
@@ -154,7 +159,7 @@
 
             #Navigation {
                 position: absolute;
-                background: #4c5b61;
+                background: #292929;
                 width: 100px;
                 right: 25px;
                 z-index: 5;
@@ -184,6 +189,7 @@
             .nav-list {
                 margin: 0;
             }
+
             .nav-box {
                 padding: 30px 2px 30px 2px;
                 margin: 0;
@@ -201,13 +207,14 @@
             }
 
             #nav-h-list {
-                margin-top: auto;
-                margin-bottom: auto;
+                width: 100%;
+                height: 100%;
             }
 
             .nav-link-horizontal {
-                margin-top: 25px;
-                margin-left: 1vw;
+                padding-top: 25px;
+                padding-left: 1vw;
+                height: 70px;
                 text-align: center;
             }
 
@@ -228,7 +235,39 @@
                 background: #23637c;
             }
 
+            #nav-indicator {
+                position: absolute;
+                float: right;
+                width: 100px;
+                height: 100px;
+                top: 90vh;
+                right: 25px;
+                z-index: 4;
+                background: #292929;
+                font-size: 75px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                visibility: visible;
+            }
             
+            .nav-indicator-anim {
+                animation: MoveUpDown 1s linear infinite;
+            }
+
+            @keyframes MoveUpDown {
+                0% {
+                    padding-top: 0;
+                }
+
+                50% {
+                    padding-top: 10px;
+                }
+
+                100% {
+                    padding-top: 1px;
+                }
+            }
+
             #Landing {
                 background: no-repeat center right fixed url("assets/images/landing-bg.jpg");
                 position: relative;
@@ -373,8 +412,17 @@
                 #Navigation {
                     visibility: hidden;
                 }
+                #nav-indicator {
+                    width: 100%;
+                    right: 0;
+                    border-radius: 0;
+                }
 
                 #nav-h-container {
+                    visibility: visible;
+                }
+
+                #nav-indicator-mobile {
                     visibility: visible;
                 }
 
@@ -405,6 +453,12 @@
                     <h3 class="landing-subtitle">Front End Web Developer from League City, TX</h3>
                 </div>
                 <div class="landing-overlay"></div>
+                <div class="text-center" id="nav-indicator">
+                    <a href="#Profile" style="color:white;"><i class="fas fa-angle-down nav-indicator-anim"></i></a>
+                </div>
+                <div class="nav-indicator-h text-center">
+                    <i class="fas fa-angle-down"></i>
+                </div>
             </div>
 
             <!-- Navigation -->
