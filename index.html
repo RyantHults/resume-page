@@ -260,9 +260,68 @@
             
             .nav-indicator-anim {
                 animation: MoveUpDown 1s linear infinite;
+                -moz-animation: MoveUpDown 1s linear infinite;
+                -webkit-animation: MoveUpDown 1s linear infinite;
+                -o-animation: MoveUpDown 1s linear infinite;
+                -ms-animation: MoveUpDown 1s linear infinite;
             }
 
             @keyframes MoveUpDown {
+                0% {
+                    padding-top: 0;
+                }
+
+                50% {
+                    padding-top: 10px;
+                }
+
+                100% {
+                    padding-top: 1px;
+                }
+            }
+            @-moz-keyframes MoveUpDown {
+                0% {
+                    padding-top: 0;
+                }
+
+                50% {
+                    padding-top: 10px;
+                }
+
+                100% {
+                    padding-top: 1px;
+                }
+            }
+
+            @-webkit-keyframes MoveUpDown {
+                0% {
+                    padding-top: 0;
+                }
+
+                50% {
+                    padding-top: 10px;
+                }
+
+                100% {
+                    padding-top: 1px;
+                }
+            }
+
+            @-o-keyframes MoveUpDown {
+                0% {
+                    padding-top: 0;
+                }
+
+                50% {
+                    padding-top: 10px;
+                }
+
+                100% {
+                    padding-top: 1px;
+                }
+            }
+
+            @-ms-keyframes MoveUpDown {
                 0% {
                     padding-top: 0;
                 }
@@ -826,7 +885,8 @@
                         <br />
                         <hr>
                         <div class="row text-center">
-                            <h5>Test text</h5>
+                            <h5>© Ryan Hults | v1.1 | Design: <a href="http://pascalvangemert.nl" style="color:#aeaeae">Pascal Van Gemert</a>
+                            </h5>
                         </div>
                     </div>
                 </div>  
