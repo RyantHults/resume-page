@@ -130,6 +130,7 @@
             })(jQuery);
         </script>
         <style>
+
             body {
                 font-family: 'Open Sans', sans-serif !important;
             }
@@ -383,6 +384,9 @@
                 border-color: black;
             }
 
+            .profile-font {
+                font-size: 20px;
+            }
             #Experience {
                 background: #dedede;
                 padding: 50px 0px 50px 0px;
@@ -458,13 +462,22 @@
             }
 
             @media only screen and (max-width: 1200px) { 
+                #left-profile {
+                    margin-bottom: 25px;
+                    text-align: center;
+                }
 
-            }
-
-            @media only screen and (max-width: 992px) {
+                #right-profile {
+                    margin-top: 50px;
+                    text-align: center;
+                }
                 .second-portfolio {
                     margin-top: 20px;
                 }
+            }
+
+            @media only screen and (max-width: 992px) {
+               
             }
 
             @media only screen and (max-width: 768px) {
@@ -492,20 +505,6 @@
                 #nav-indicator-mobile {
                     visibility: visible;
                 }
-
-                #left-profile {
-                    margin-bottom: 25px;
-                    text-align: center;
-                }
-
-                #right-profile {
-                    margin-top: 50px;
-                    text-align: center;
-                }
-                .second-portfolio {
-                    margin-top: 20px;
-                }
-
             }
 
         </style>
@@ -597,15 +596,23 @@
             <div class="row" id="Profile">
                 <h2 class="text-center header">Profile</h2>
                 <br />
-                <div class="col-xs-8 col-sm-2 col-lg-2 col-xs-offset-2 col-sm-offset-2 col-lg-offset-2 text-right" id="left-profile">
-                    <h4 class="">About</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="col-xs-8 col-sm-8 col-lg-3 col-xs-offset-2 col-sm-offset-2 col-lg-offset-1 text-left" id="left-profile">
+                    <h3 class="profile-font">About</h3>
+                    <p class="profile-font">I am a recent graduate from Electronic Systems Engineering program at Texas A&M University. I have a strong foundation in backend technologies and a passion for front end web development.</p>
                 </div>
-                <div class="col-xs-8 col-sm-4 col-lg-4 col-xs-offset-2 col-sm-offset-0 profile-img">
+                <div class="col-xs-8 col-sm-12 col-lg-4 col-xs-offset-2 col-sm-offset-0 profile-img">
                     <img class="img-responsive img-circle center-block" id="profile-image" src="https://ryanthults.github.io/assets/images/me2.jpg" alt="A picture of me" />
                 </div>
-                <div class="col-xs-8 col-sm-2 col-lg-2 col-xs-offset-2 col-sm-offset-0 text-left" id="right-profile">
-                    <p>Proin eget suscipit mi, porttitor laoreet nibh. In dolor odio, sagittis nec est eu, faucibus mattis tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
+                <div class="col-xs-8 col-sm-12 col-lg-3 col-xs-offset-2 col-sm-offset-0 text-left" id="right-profile">
+                    <h3 class="profile-font">Details</h3>
+                    <p class="profile-font">
+                        <b>Name:</b><br/>
+                        Ryan Thomas Hults<br/>
+                        <b>Age:</b><br/>
+                        24 Years<br/>
+                        <b>Location:</b><br/>
+                        League City, TX
+                    </p>
                 </div>
             </div>
 
