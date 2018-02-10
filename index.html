@@ -15,7 +15,7 @@
                 $(document).ready(function(){
                     $(window).scroll(function() {
                         var navbox = jQuery('#Navigation');
-                        var navboxh = jQuery('#nav-h-container');
+                        var navboxh = jQuery('#nav-container-mobile');
                         var prof = jQuery('#Profile').offset().top - $(window).scrollTop();
                         var exper = jQuery('#Experience').offset().top - $(window).scrollTop();
                         var skill = jQuery('#Skills').offset().top - $(window).scrollTop();
@@ -29,7 +29,7 @@
                         }
 
                         if(prof < 1) {
-                            navboxh.addClass('nav-float-h');
+                            navboxh.addClass('nav-float-mobile');
                             navboxh.removeClass('nav-scroll');
                         }
 
@@ -41,13 +41,13 @@
 
                         if(prof > 0) {
                             navboxh.addClass('nav-scroll');
-                            navboxh.removeClass('nav-float-h');
+                            navboxh.removeClass('nav-float-mobile');
                         }
 
                         //profile
                         if(exper > 0) {
                             var element = jQuery('#nav-profile-link');
-                            var elementh = jQuery('#nav-profile-link-h')
+                            var elementh = jQuery('#nav-profile-link-mobile')
                             element.siblings('li').removeClass('nav-active inactiveLink');
                             elementh.siblings('li').removeClass('nav-active inactiveLink');
                             element.siblings('li').children('a').css('color','#aeaeae');
@@ -60,7 +60,7 @@
                         //experience
                         if(exper < 1 && skill > 0) {
                             var element = jQuery('#nav-experience-link');
-                            var elementh = jQuery('#nav-experience-link-h');
+                            var elementh = jQuery('#nav-experience-link-mobile');
                             element.siblings('li').removeClass('nav-active inactiveLink');
                             elementh.siblings('li').removeClass('nav-active inactiveLink');
                             element.siblings('li').children('a').css('color','#aeaeae');
@@ -73,7 +73,7 @@
                         //skills
                         if(skill < 1 && portf > 0) {
                             var element = jQuery('#nav-skills-link');
-                            var elementh = jQuery('#nav-skills-link-h');
+                            var elementh = jQuery('#nav-skills-link-mobile');
                             element.siblings('li').removeClass('nav-active inactiveLink');
                             elementh.siblings('li').removeClass('nav-active inactiveLink');
                             element.siblings('li').children('a').css('color','#aeaeae');
@@ -86,7 +86,7 @@
                         //portfolio
                         if(portf < 1) {
                             var element = jQuery('#nav-portfolio-link');
-                            var elementh = jQuery('#nav-portfolio-link-h');
+                            var elementh = jQuery('#nav-portfolio-link-mobile');
                             element.siblings('li').removeClass('nav-active inactiveLink');
                             elementh.siblings('li').removeClass('nav-active inactiveLink');
                             element.siblings('li').children('a').css('color','#aeaeae');
@@ -100,7 +100,7 @@
                         //contact
                         if((cont-jQuery('#Contact').height()) < 1) {
                             var element = jQuery('#nav-contact-link');
-                            var elementh = jQuery('#nav-contact-link-h');
+                            var elementh = jQuery('#nav-contact-link-mobile');
                             element.siblings('li').removeClass('nav-active inactiveLink');
                             elementh.siblings('li').removeClass('nav-active inactiveLink');
                             element.siblings('li').children('a').css('color','#aeaeae');
@@ -118,11 +118,11 @@
                     });
 
                     //mobile navbar scroll animation
-                    $('#nav-h-container ul>li>a').on('click', function(){
+                    $('#nav-container-mobile ul>li>a').on('click', function(){
                         var href = $(this).attr('href');
                         jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
                     });
-                    $('#nav-indicator a').on('click', function(){
+                    $('#nav-indicator-link').on('click', function(){
                         var href = $(this).attr('href');
                         jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
                     });
@@ -172,7 +172,7 @@
                 position: fixed !important;
             }
 
-            .nav-float-h {
+            .nav-float-mobile {
                 top: 0;
                 position: fixed !important;
             }
@@ -191,13 +191,11 @@
             }
 
             .nav-box {
-                padding: 30px 2px 30px 2px;
                 margin: 0;
                 width: 100%;
-                
             }
 
-            #nav-h-container {
+            #nav-container-mobile {
                 position: absolute;
                 width: 100%;
                 height: 70px;
@@ -206,19 +204,29 @@
                 z-index: 5;
             }
 
-            #nav-h-list {
-                width: 100%;
-                height: 100%;
+            #nav-list-mobile {
+                margin: 0;
             }
 
             .nav-link-horizontal {
-                padding-top: 25px;
                 padding-left: 1vw;
-                height: 70px;
-                text-align: center;
+            }
+            
+            .nav-link-container-desktop {
+                padding: 30px 2px 30px 2px;
+                width: 100%;
             }
 
-            .nav-link { color: #aeaeae; }
+            .nav-link-container-mobile {
+                height: 100%;
+                padding-top: 25px;
+            }
+
+            .nav-link { 
+                color: #aeaeae; 
+                height: auto;
+                width: auto;
+                }
             
             .nav-link:focus { 
                 color: #aeaeae;
@@ -418,7 +426,7 @@
                     border-radius: 0;
                 }
 
-                #nav-h-container {
+                #nav-container-mobile {
                     visibility: visible;
                 }
 
@@ -453,12 +461,11 @@
                     <h3 class="landing-subtitle">Front End Web Developer from League City, TX</h3>
                 </div>
                 <div class="landing-overlay"></div>
-                <div class="text-center" id="nav-indicator">
-                    <a href="#Profile" style="color:white;"><i class="fas fa-angle-down nav-indicator-anim"></i></a>
-                </div>
-                <div class="nav-indicator-h text-center">
-                    <i class="fas fa-angle-down"></i>
-                </div>
+                <a href="#Profile" style="color:white;" id="nav-indicator-link">
+                    <div class="text-center" id="nav-indicator">
+                        <i class="fas fa-angle-down nav-indicator-anim"></i>
+                    </div>
+                </a>
             </div>
 
             <!-- Navigation -->
@@ -466,19 +473,29 @@
                 <div class="container center-block" id="nav-container">
                     <ul class="list-unstyled nav-list">
                         <li class="nav-box text-center" id="nav-profile-link">
-                            <a class="nav-link" href="#Profile">Profile</a>
+                            <a class="nav-link" href="#Profile">
+                                <div class="nav-link-container-desktop">Profile</div>
+                            </a>
                         </li>
                         <li class="row nav-box text-center" id="nav-experience-link">
-                            <a class="nav-link" href="#Experience">Experience</a>
+                            <a class="nav-link" href="#Experience">
+                                <div class="nav-link-container-desktop">Experience</div>
+                            </a>
                         </li>
                         <li class="row nav-box text-center" id="nav-skills-link">
-                            <a class="nav-link" href="#Skills">Skills</a>
+                            <a class="nav-link" href="#Skills">
+                                <div class="nav-link-container-desktop">Skills</div>
+                            </a>
                         </li>
                         <li class="row nav-box text-center" id="nav-portfolio-link">
-                            <a class="nav-link" href="#Portfolio">Portfolio</a>
+                            <a class="nav-link" href="#Portfolio">
+                                <div class="nav-link-container-desktop">Portfolio</div>
+                            </a>
                         </li>
                         <li class="row nav-box text-center" id="nav-contact-link">
-                            <a class="nav-link" href="#Contact">Contact</a>
+                            <a class="nav-link" href="#Contact">
+                                <div class="nav-link-container-desktop">Contact</div>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -486,22 +503,32 @@
 
             <!-- Navigation -->
             <div class="" id="Navigation-Horizontal">
-                <div class="container" id="nav-h-container">
-                    <ul class="list-unstyled list-inline text-center d-flex justify-content-center align-items-center" id="nav-h-list">
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-profile-link-h">
-                            <a class="nav-link" href="#Profile">Profile</a>
+                <div class="container" id="nav-container-mobile">
+                    <ul class="list-unstyled list-inline text-center d-flex justify-content-center align-items-center" id="nav-list-mobile">
+                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-profile-link-mobile">
+                            <a class="nav-link" href="#Profile">
+                                <div class="nav-link-container-mobile">Profile</div>
+                            </a>
                         </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-experience-link-h">
-                            <a class="nav-link" href="#Experience">Experience</a>
+                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-experience-link-mobile">
+                            <a class="nav-link" href="#Experience">
+                                    <div class="nav-link-container-mobile">Experience</div>
+                            </a>
                         </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-skills-link-h">
-                            <a class="nav-link" href="#Skills">Skills</a>
+                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-skills-link-mobile">
+                            <a class="nav-link" href="#Skills">
+                                    <div class="nav-link-container-mobile">Skills</div>
+                            </a>
                         </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-portfolio-link-h">
-                            <a class="nav-link" href="#Portfolio">Portfolio</a>
+                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-portfolio-link-mobile">
+                            <a class="nav-link" href="#Portfolio">
+                                <div class="nav-link-container-mobile">Portfolio</div>
+                            </a>
                         </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-contact-link-h">
-                            <a class="nav-link" href="#Contact">Contact</a>
+                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-contact-link-mobile">
+                            <a class="nav-link" href="#Contact">
+                                <div class="nav-link-container-mobile">Contact</div>
+                            </a>
                         </li>
                     </ul>
                 </div>
