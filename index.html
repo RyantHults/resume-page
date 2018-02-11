@@ -12,6 +12,7 @@
         <link rel="author" href="https://ryanthults.github.io" alt="https://plus.google.com/u/2/108203311083664618233">
         <script>
             (function($){
+                $ss(function() )
                 $(document).ready(function(){
                     $(window).scroll(function() {
                         var navbox = jQuery('#Navigation');
@@ -21,6 +22,9 @@
                         var skill = jQuery('#Skills').offset().top - $(window).scrollTop();
                         var portf = jQuery('#project').offset().top - $(window).scrollTop();
                         var cont = jQuery('#Contact').offset().top - $(window).scrollTop();
+
+                        //get space below Contact section to determine when we are at the bottom the the page
+                        var spaceBelow = window.innerHeight - document.getElementById('Contact').getBoundingClientRect().bottom;
 
                         //make the nav bar float along with the page
                         if(prof < 40) {
@@ -98,7 +102,7 @@
                         }
                                            
                         //contact
-                        if(cont < 460) {
+                        if(spaceBelow > 0) {
                             var element = jQuery('#nav-contact-link');
                             var elementh = jQuery('#nav-contact-link-mobile');
                             element.siblings('li').removeClass('nav-active inactiveLink');
@@ -122,6 +126,7 @@
                         var href = $(this).attr('href');
                         jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
                     });
+
                     $('#nav-indicator-link').on('click', function(){
                         var href = $(this).attr('href');
                         jQuery('html,body').animate({scrollTop: jQuery(href).offset().top}, 300);
@@ -342,7 +347,6 @@
                 background-size: cover;
                 position: relative;
                 height: 100%;
-                height: 100vh;
                 margin: 0;
                 overflow: hidden;
             }
