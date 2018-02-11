@@ -96,9 +96,9 @@
                             element.children('a').css('color','white');
                             elementh.children('a').css('color','white');
                         }
-
+                                           
                         //contact
-                        if((cont-jQuery('#Contact').height()) < 1) {
+                        if(cont < 400) {
                             var element = jQuery('#nav-contact-link');
                             var elementh = jQuery('#nav-contact-link-mobile');
                             element.siblings('li').removeClass('nav-active inactiveLink');
@@ -526,6 +526,7 @@
             @media only screen and (max-width: 768px) {
                 
             }
+
         </style>
     </head>
     <body>
