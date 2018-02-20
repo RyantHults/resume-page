@@ -3,9 +3,10 @@
         <title>Ryan Hults | Interactive Resume</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, height=device-height initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
         <meta name="author" content="Ryan Hults">
@@ -182,53 +183,60 @@
                 position: absolute;
             }
 
+            .nav-link {
+                padding: 0;
+                width: 100%;
+            }
+
             #nav-container { 
                 width: 100%; 
                 padding: 0;
-            }
-
-            .nav-list {
-                margin: 0;
-            }
-
-            .nav-box {
-                margin: 0;
-                width: 100%;
-            }
-
-            #nav-container-mobile {
-                position: absolute;
-                width: 100%;
-                height: 70px;
-                background: #292929;
-                visibility: hidden;
-                z-index: 5;
-            }
-
-            #nav-list-mobile {
-                margin: 0;
-            }
-
-            .nav-link-horizontal {
-                padding-left: 1vw;
             }
             
             .nav-link-container-desktop {
                 padding: 30px 2px 30px 2px;
                 width: 100%;
             }
+            
+            .nav-list {
+                margin: 0;
+            }
+            
+            .nav-box {
+                margin: 0;
+                width: 100%;
+            }
+            
+            #nav-container-mobile{
+                position: absolute;
+                width: 100%;
+                height: 70px;
+                padding: 0;
+                background: #292929;
+                visibility: hidden;
+                z-index: 5;
+            }
+
+            #nav-list-mobile {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                vertical-align: middle;
+            }
+
+            .nav-link-horizontal {
+                height: 100%;
+                margin: 0 auto;
+            }
 
             .nav-link-container-mobile {
                 height: 100%;
-                padding-top: 20px;
-                font-size: 25px;
+                margin: auto 10px;
             }
 
             .nav-link { 
                 color: #aeaeae; 
-                height: auto;
-                width: auto;
-                }
+            }
             
             .nav-link:focus { 
                 color: #aeaeae;
@@ -384,7 +392,9 @@
 
             #profile-img {
                 border-style: solid;
-                border-color: black;
+                border-color: #dedede;
+                border-width: 10px;
+                border-radius: 50%;
             }
 
             .profile-font {
@@ -434,7 +444,7 @@
                 background: #dedede;
                 padding: 50px 0px 50px 0px;
                 width: inherit;
-                margin: 0;
+
             }
 
             .project-overlay {
@@ -442,7 +452,7 @@
                 height: 100%;
                 color: white;
                 margin: 0;
-                padding: 0 10px 0 10px;
+                padding: 10px;
                 background: #23637c;
                 position: absolute;
                 opacity: 0;
@@ -533,7 +543,7 @@
         <div class="container-fluid">
             <!-- Landing Section -->
             <div class="row" id="Landing">
-                <div class="col-xs-12 col-lg-12 text-center align-self-center landing-text">
+                <div class="col-xs-12 col-lg-12 text-center align-items-center landing-text">
                     <h1 class="landing-main-txt">Ryan Hults</h1>
                     <hr class="landing-hr">
                     <h3 class="landing-subtitle">Interactive Resume</h3>
@@ -582,7 +592,7 @@
             <!-- Navigation -->
             <div class="" id="Navigation-Horizontal">
                 <div class="container" id="nav-container-mobile">
-                    <ul class="list-unstyled list-inline text-center d-flex justify-content-center align-items-center" id="nav-list-mobile">
+                    <ul class="list-unstyled list-inline text-center d-flex" id="nav-list-mobile">
                         <li class="list-inline-item text-center nav-link-horizontal" id="nav-profile-link-mobile">
                             <a class="nav-link" href="#Profile">
                                 <div class="nav-link-container-mobile">Profile</div>
@@ -614,16 +624,18 @@
 
             <!-- Profile Section -->
             <div class="row" id="Profile">
-                <h2 class="text-center header">Profile</h2>
-                <br />
-                <div class="col-xs-8 col-sm-8 col-lg-3 col-xs-offset-2 col-sm-offset-2 col-lg-offset-1 text-right" id="left-profile">
+                <div class="col-12">
+                    <h2 class="text-center header">Profile</h2>
+                    <br />
+                </div>
+                <div class="col-8 col-sm-8 col-lg-3 offset-2 offset-sm-2 offset-lg-2 text-right" id="left-profile">
                     <h2>About</h2>
                     <p class="profile-font">I am a recent graduate from Electronic Systems Engineering program at Texas A&M University. I have a strong foundation in back-end technologies and a passion for front-end web development.</p>
                 </div>
-                <div class="col-xs-8 col-sm-12 col-lg-4 col-xs-offset-2 col-sm-offset-0 profile-img">
-                    <img class="img-responsive img-circle center-block" id="profile-image" src="https://ryanthults.github.io/assets/images/me2.jpg" alt="A picture of me" />
+                <div class="col-xs-8 col-sm-12 col-lg-2 offset-xs-2 offset-sm-0 profile-img align-items-center">
+                    <img class="img-fluid mx-auto d-block" id="profile-img" src="https://ryanthults.github.io/assets/images/me2.jpg" alt="A picture of me" />
                 </div>
-                <div class="col-xs-8 col-sm-12 col-lg-3 col-xs-offset-2 col-sm-offset-0 text-left" id="right-profile">
+                <div class="col-xs-8 col-sm-12 col-lg-4 offset-xs-2 offset-sm-0 text-left" id="right-profile">
                     <h2>Details</h2>
                     <p class="profile-font">
                         <b>Name:</b><br/>
@@ -638,8 +650,11 @@
 
             <!-- Experience Section -->
             <div class="row" id="Experience">
-                <h2 class="text-center header">Experience</h2>
-                <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
+                <div class="col-12">
+                    <h2 class="text-center header">Experience</h2>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3">
+                    <hr>
                     <h4>Education</h4>
                     <table class="table">
                         <tr>
@@ -711,78 +726,80 @@
 
             <!-- Skills Section -->
             <div class="row" id="Skills">
-                <h2 class="text-center header">Skills</h2>
-                <br />
-                <div class="col-xs-10 col-sm-6 col-xs-offset-1 col-sm-offset-3 skill-tables">
+                <div class="col-12">
+                    <h2 class="text-center header">Skills</h2>
+                </div>
+                <div class="col-xs-10 col-sm-8 offset-xs-1 offset-sm-2 skill-tables">
+                    <hr>
                     <h4>Programming Languages</h4> 
                     <div class="row">         
                         <div class="col-lg-6">             
                             <table class="table" id="skill-table-1">
                                 <tr>
-                                    <th class="col-xs-6"><h5>HTML(5)</h5></th>
-                                    <th class="col-xs-6 text-right"><h5>
+                                    <th class="col-xs-6"><h6>HTML(5)</h6></th>
+                                    <th class="col-xs-6 text-right"><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>CSS</h5></th>
-                                    <th class="text-right"><h5><h5>
+                                    <th><h6>CSS</h6></th>
+                                    <th class="text-right"><h6><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>Twitter Bootstrap</h5></th>
-                                    <th class="text-right"><h5>
+                                    <th><h6>Twitter Bootstrap</h6></th>
+                                    <th class="text-right"><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>C</h5></th>
-                                    <th class="text-right"><h5>
+                                    <th><h6>C</h6></th>
+                                    <th class="text-right"><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>Javascript</h5></th>
-                                    <th class="text-right"><h5><h5>
+                                    <th><h6>Javascript</h6></th>
+                                    <th class="text-right"><h6><h6>
+                                            <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 
                                 <tr>
-                                    <th><h5>NodeJS</h5></th>
-                                    <th class="text-right"><h5><h5>
+                                    <th><h6>NodeJS</h6></th>
+                                    <th class="text-right"><h6><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star "></i>
                                             <i class="fas fa-star star-off"></i>
                                             <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                             </table>
@@ -790,70 +807,70 @@
                         <div class="col-lg-6">
                             <table class="table" id="skill-table-2">
                                 <tr>
-                                    <th class="col-xs-6"><h5>MySQL</h5></th>
-                                    <th class="col-xs-6 text-right"><h5><h5>
+                                    <th class="col-xs-6"><h6>MySQL</h6></th>
+                                    <th class="col-xs-6 text-right"><h6><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
                                             <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>PHP</h5></th>
-                                    <th class="text-right"><h5><h5>
+                                    <th><h6>PHP</h6></th>
+                                    <th class="text-right"><h6><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
                                             <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>CLI</h5></th>
-                                    <th class="text-right"><h5><h5>
+                                    <th><h6>CLI</h6></th>
+                                    <th class="text-right"><h6><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
                                             <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 
                                 <tr>
-                                    <th><h5>Java</h5></th>
-                                    <th class="text-right"><h5>
+                                    <th><h6>Java</h6></th>
+                                    <th class="text-right"><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
                                             <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>Python</h5></th>
-                                    <th class="text-right"><h5>
+                                    <th><h6>Python</h6></th>
+                                    <th class="text-right"><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
                                             <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>JQuery</h5></th>
-                                    <th class="text-right"><h5><h5>
+                                    <th><h6>JQuery</h6></th>
+                                    <th class="text-right"><h6><h6>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
                                             <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                             </table>
@@ -865,47 +882,47 @@
                         <div class="col-lg-6">
                             <table class="table" id="skill-table-1">
                                 <tr>
-                                    <th class="col-xs-6"><h5>MS Office (8 years)</h5></th>
-                                    <th class="col-xs-6 text-right"><h5>
+                                    <th class="col-xs-6"><h6>MS Office (8 years)</h6></th>
+                                    <th class="col-xs-6 text-right"><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>Windows (8 years)</h5></th>
-                                    <th class="text-right"><h5><h5>
+                                    <th><h6>Windows (8 years)</h6></th>
+                                    <th class="text-right"><h6><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>Adobe Photoshop (6 years)</h5></th>
-                                    <th class="text-right"><h5>
+                                    <th><h6>Adobe Photoshop (6 years)</h6></th>
+                                    <th class="text-right"><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h5>Microsoft Active Directory (3 years)</h5></th>
-                                    <th class="text-right"><h5>
+                                    <th><h6>Microsoft Active Directory (3 years)</h6></th>
+                                    <th class="text-right"><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
                                             <i class="fas fa-star star-off"></i>
-                                        </h5>
+                                        </h6>
                                     </th>
                                 </tr>
                             </table>
@@ -913,36 +930,36 @@
                         <div class="col-lg-6">
                                 <table class="table" id="skill-table-1">
                                     <tr>
-                                        <th class="col-xs-6"><h5>Microsoft Visio (3 years)</h5></th>
-                                        <th class="col-xs-6 text-right"><h5>
+                                        <th class="col-xs-6"><h6>Microsoft Visio (3 years)</h6></th>
+                                        <th class="col-xs-6 text-right"><h6>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star star-off"></i>
                                                 <i class="fas fa-star star-off"></i>
-                                            </h5>
+                                            </h6>
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th><h5>Notepad++ (4 years)</h5></th>
-                                        <th class="text-right"><h5><h5>
+                                        <th><h6>Notepad++ (4 years)</h6></th>
+                                        <th class="text-right"><h6><h6>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star star-off"></i>
                                                 <i class="fas fa-star star-off"></i>
-                                            </h5>
+                                            </h6>
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th><h5>Visual Studio Code (1 year)</h5></th>
-                                        <th class="text-right"><h5>
+                                        <th><h6>Visual Studio Code (1 year)</h6></th>
+                                        <th class="text-right"><h6>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star"></i>
                                                 <i class="fas fa-star star-off"></i>
                                                 <i class="fas fa-star star-off"></i>
-                                            </h5>
+                                            </h6>
                                         </th>
                                     </tr>
                                 </table>
@@ -953,44 +970,54 @@
 
             <!-- project Section -->
             <div class="row" id="project">
-                <h2 class="text-center header">Projects</h2>
-                <div class="col-xs-12 col-sm-8 col-lg-6 col-sm-offset-2 col-lg-offset-3">
+                <div class="col-12">
+                    <h2 class="text-center header">Projects</h2>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3">
                     <br />
                     <div class="row">
-                        <div class="col-xs-12 col-lg-6">
-                            <a href="http://nphase.xyz/" target="__blank" ><div class="project-overlay text-center">
-                                <h3>nPhase.xyz</h3>
-                                <hr class="project-hr">
-                                <p>Created a mobile responsive webpage to showcase my senior design project.</p>
-                            </div></a>
-                            <img class="img-responsive" src="assets/images/nphase-thumb.png" />
+                        <div class="col-xs-12 col-md-6">
+                            <a href="http://nphase.xyz/" target="__blank" >
+                                <div class="project-overlay align-content-center text-center">
+                                    <h3>nPhase.xyz</h3>
+                                    <hr class="project-hr">
+                                    <p>Created a mobile responsive webpage to showcase my senior design project.</p>
+                                </div>
+                            </a>
+                            <img class="img-fluid" src="assets/images/nphase-thumb.png" />
                         </div>
-                        <div class="col-xs-12 col-lg-6 second-project">
-                                <div class="project-overlay text-center">
-                                        <h3>temp.link</h3>
-                                        <hr class="project-hr">
-                                        <p>A placeholder for future projects</p>
-                                    </div>
-                            <a href="http://temp.link" target="__blank" ><img class="img-responsive" src="assets/images/ph-thumb.png" /></a>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-6">
+                        <div class="w-100 d-block d-md-none"><br/></div>
+                        <div class="col-xs-12 col-md-6">
+                            <a href="http://temp.link" target="__blank" >
                                 <div class="project-overlay text-center">
                                     <h3>temp.link</h3>
                                     <hr class="project-hr">
                                     <p>A placeholder for future projects</p>
                                 </div>
-                            <a href="http://temp.link" target="__blank" ><img class="img-responsive" src="assets/images/ph-thumb.png" /></a>
+                            </a>
+                            <img class="img-fluid" src="assets/images/ph-thumb.png" />
                         </div>
-                        <div class="col-xs-12 col-lg-6 second-project">
+                        <div class="w-100"><br/></div>
+                        <div class="col-xs-12 col-lg">
+                            <a href="http://temp.link" target="__blank">
                                 <div class="project-overlay text-center">
                                     <h3>temp.link</h3>
                                     <hr class="project-hr">
                                     <p>A placeholder for future projects</p>
                                 </div>
-                            <a href="http://temp.link" target="__blank" ><img class="img-responsive" src="assets/images/ph-thumb.png" /></a>
+                            </a>
+                            <img class="img-fluid" src="assets/images/ph-thumb.png" />
+                        </div>
+                        <div class="w-100 d-block d-md-none"><br/></div>
+                        <div class="col-xs-12 col-lg">
+                            <a href="http://temp.link" target="__blank" >
+                                <div class="project-overlay text-center">
+                                    <h3>temp.link</h3>
+                                    <hr class="project-hr">
+                                    <p>A placeholder for future projects</p>
+                                </div>
+                            </a>
+                            <img class="img-fluid" src="assets/images/ph-thumb.png" />
                         </div>
                     </div>
                 </div>
@@ -998,8 +1025,10 @@
 
             <!-- Contact Section -->
             <div class="row" id="Contact">
-                <h2 class="contact-header text-center">Contact</h2>
-                <div class="col-xs-12 col-lg-6 col-lg-offset-3" id="contact-column">
+                <div class="col-12">
+                    <h2 class="contact-header text-center">Contact</h2>
+                </div>
+                <div class="col-xs-12 col-lg-6 offset-lg-3" id="contact-column">
                     <hr>
                     <div class="row">
                         <div class="col-xs-12 col-lg-6 text-center">
@@ -1020,7 +1049,7 @@
                         </div>
                         <br />
                         <hr>
-                        <div class="row text-center">
+                        <div class="col-12 text-center">
                             <h5>© Ryan Hults | v1.55 | Design: <a href="http://pascalvangemert.nl" target="__blank" style="color:#aeaeae">Pascal Van Gemert</a>
                             </h5>
                         </div>
