@@ -3,7 +3,7 @@
         <title>Ryan Hults | Interactive Resume</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, height=device-height initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
@@ -20,7 +20,7 @@
                         var prof = jQuery('#Profile').offset().top - $(window).scrollTop();
                         var exper = jQuery('#Experience').offset().top - $(window).scrollTop();
                         var skill = jQuery('#Skills').offset().top - $(window).scrollTop();
-                        var portf = jQuery('#project').offset().top - $(window).scrollTop();
+                        var portf = jQuery('#Project').offset().top - $(window).scrollTop();
                         var cont = jQuery('#Contact').offset().top - $(window).scrollTop();
 
                         //make the nav bar float along with the page
@@ -131,694 +131,804 @@
             })(jQuery);
         </script>
         <style>
+            /* basics  */
+                    body {
+                        font-family: 'Open Sans', sans-serif !important;
+                    }
+                    h2 {
+                        color: #4c5b61;
+                    }
 
-            body {
-                font-family: 'Open Sans', sans-serif !important;
-            }
-            h2 {
-                color: #4c5b61;
-            }
+                    h4 {
+                        color: #4c5b61;
+                    }
 
-            h4 {
-                color: #4c5b61;
-            }
+                    hr {
+                        border-color: #aeaeae;
+                    }
 
-            hr {
-                border-color: #aeaeae;
-            }
+                    i {
+                        padding: 0px 1px 0px 1px;
+                    }
 
-            i {
-                padding: 0px 1px 0px 1px;
-            }
+                    .header {
+                        font-size: 50px;
+                    }
+            /* Navigation */
+                /* Desktop */
+                    #Navigation {
+                        position: absolute;
+                        background: #292929;
+                        width: 100px;
+                        right: 25px;
+                        z-index: 5;
+                        visibility: visible;
+                        border-radius: 5px;
+                    }
 
-            .container-fluid {
-                padding: 0px 0px 0px 0px !important;
-            }
+                    .nav-float {
+                        top: 5vh;
+                        position: fixed !important;
+                    }
 
-            .header {
-                font-size: 50px;
-            }
+                    .nav-scroll {
+                        position: absolute;
+                    }
 
-            #Navigation {
-                position: absolute;
-                background: #292929;
-                width: 100px;
-                right: 25px;
-                z-index: 5;
-                visibility: visible;
-                border-radius: 5px;
-            }
+                    .nav-link-desktop {
+                        padding: 0;
+                        width: 100%;
+                    }
 
-            .nav-float {
-                top: 5vh;
-                position: fixed !important;
-            }
+                    #nav-container { 
+                        width: 100%; 
+                        padding: 0;
+                    }
+                    
+                    .nav-link-container-desktop {
+                        padding: 30px 2px 30px 2px;
+                        width: 100%;
+                    }
+                    
+                    .nav-list {
+                        margin: 0;
+                    }
+                    
+                    .nav-box {
+                        margin: 0;
+                        width: 100%;
+                    }
 
-            .nav-float-mobile {
-                top: 0;
-                position: fixed !important;
-            }
+                /* Mobile */    
+                    #nav-container-mobile{
+                        width: 100%;
+                        height: 80px;
+                        padding: 0 5px;
+                        background: #292929;
+                        visibility: hidden;
+                        z-index: 5;
+                    }
+                    
+                    .nav-float-mobile {
+                        top: 0;
+                        position: fixed !important;
+                    }
 
-            .nav-scroll {
-                position: absolute;
-            }
+                    .nav-link-container-mobile {
+                        height: 100%;
+                    }
+                    
+                /* Links */
+                    .nav-link { 
+                        color: #aeaeae; 
+                    }
+                    
+                    .nav-link:focus { 
+                        color: #aeaeae;
+                        text-decoration: none; 
+                    }
 
-            .nav-link {
-                padding: 0;
-                width: 100%;
-            }
+                    .nav-link:hover { 
+                        color: white;
+                        text-decoration: none;
+                    }
 
-            #nav-container { 
-                width: 100%; 
-                padding: 0;
-            }
-            
-            .nav-link-container-desktop {
-                padding: 30px 2px 30px 2px;
-                width: 100%;
-            }
-            
-            .nav-list {
-                margin: 0;
-            }
-            
-            .nav-box {
-                margin: 0;
-                width: 100%;
-            }
-            
-            #nav-container-mobile{
-                position: absolute;
-                width: 100%;
-                height: 70px;
-                padding: 0;
-                background: #292929;
-                visibility: hidden;
-                z-index: 5;
-            }
+                    .nav-active {
+                        color: white;
+                        background: #23637c;
+                        border-radius: 5px;
+                    }
+            /* Navbar indicators */
+                    #nav-indicator {
+                        position: absolute;
+                        float: right;
+                        width: 100px;
+                        height: 100px;
+                        top: calc(100vh - 100px);
+                        right: 25px;
+                        z-index: 4;
+                        background: #292929;
+                        font-size: 75px;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        visibility: visible;
+                    }
+                    
+                    .nav-indicator-anim {
+                        animation: MoveUpDown 1s linear infinite;
+                        -moz-animation: MoveUpDown 1s linear infinite;
+                        -webkit-animation: MoveUpDown 1s linear infinite;
+                        -o-animation: MoveUpDown 1s linear infinite;
+                        -ms-animation: MoveUpDown 1s linear infinite;
+                    }
 
-            #nav-list-mobile {
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                vertical-align: middle;
-            }
+                    @keyframes MoveUpDown {
+                        0% {
+                            padding-top: 0;
+                        }
 
-            .nav-link-horizontal {
-                height: 100%;
-                margin: 0 auto;
-            }
+                        50% {
+                            padding-top: 10px;
+                        }
 
-            .nav-link-container-mobile {
-                height: 100%;
-                margin: auto 10px;
-            }
+                        100% {
+                            padding-top: 1px;
+                        }
+                    }
+                    @-moz-keyframes MoveUpDown {
+                        0% {
+                            padding-top: 0;
+                        }
 
-            .nav-link { 
-                color: #aeaeae; 
-            }
-            
-            .nav-link:focus { 
-                color: #aeaeae;
-                text-decoration: none; 
-            }
+                        50% {
+                            padding-top: 10px;
+                        }
 
-            .nav-link:hover { 
-                color: white;
-                text-decoration: none;
-            }
+                        100% {
+                            padding-top: 1px;
+                        }
+                    }
 
-            .nav-active {
-                color: white;
-                background: #23637c;
-            }
+                    @-webkit-keyframes MoveUpDown {
+                        0% {
+                            padding-top: 0;
+                        }
 
-            #nav-indicator {
-                position: absolute;
-                float: right;
-                width: 100px;
-                height: 100px;
-                top: calc(100vh - 100px);
-                right: 25px;
-                z-index: 4;
-                background: #292929;
-                font-size: 75px;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-                visibility: visible;
-            }
-            
-            .nav-indicator-anim {
-                animation: MoveUpDown 1s linear infinite;
-                -moz-animation: MoveUpDown 1s linear infinite;
-                -webkit-animation: MoveUpDown 1s linear infinite;
-                -o-animation: MoveUpDown 1s linear infinite;
-                -ms-animation: MoveUpDown 1s linear infinite;
-            }
+                        50% {
+                            padding-top: 10px;
+                        }
 
-            @keyframes MoveUpDown {
-                0% {
-                    padding-top: 0;
-                }
+                        100% {
+                            padding-top: 1px;
+                        }
+                    }
 
-                50% {
-                    padding-top: 10px;
-                }
+                    @-o-keyframes MoveUpDown {
+                        0% {
+                            padding-top: 0;
+                        }
 
-                100% {
-                    padding-top: 1px;
-                }
-            }
-            @-moz-keyframes MoveUpDown {
-                0% {
-                    padding-top: 0;
-                }
+                        50% {
+                            padding-top: 10px;
+                        }
 
-                50% {
-                    padding-top: 10px;
-                }
+                        100% {
+                            padding-top: 1px;
+                        }
+                    }
 
-                100% {
-                    padding-top: 1px;
-                }
-            }
+                    @-ms-keyframes MoveUpDown {
+                        0% {
+                            padding-top: 0;
+                        }
 
-            @-webkit-keyframes MoveUpDown {
-                0% {
-                    padding-top: 0;
-                }
+                        50% {
+                            padding-top: 10px;
+                        }
 
-                50% {
-                    padding-top: 10px;
-                }
+                        100% {
+                            padding-top: 1px;
+                        }
+                    }
+            /* Landing */
+                    #Landing {
+                        background: no-repeat center right fixed url("assets/images/landing-bg.jpg");
+                        background-size: cover;
+                        position: relative;
+                        height: 100%;
+                        height: 100vh;
+                        margin: 0;
+                        overflow: hidden;
+                    }
 
-                100% {
-                    padding-top: 1px;
-                }
-            }
+                    .landing-text {
+                        position: absolute;
+                        margin-top: 35vh;
+                        z-index: 2;
+                        color: white;
+                    }
 
-            @-o-keyframes MoveUpDown {
-                0% {
-                    padding-top: 0;
-                }
+                    .landing-main-txt {
+                        font-weight: bold;
+                        font-size: 60px;
+                    }
 
-                50% {
-                    padding-top: 10px;
-                }
+                    .landing-hr { 
+                        width: 35em;
+                        transition: ease-in-out .2s;
+                        border-color: white !important;
+                    }
+                    .landing-subtitle { color: white; }
 
-                100% {
-                    padding-top: 1px;
-                }
-            }
+                    .landing-overlay {
+                        background-color: #4c5b61;
+                        position: absolute;
+                        opacity: 0.5;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                    }
+            /* Profile */
+                    #Profile {
+                        background: white;
+                        padding: 50px 0px 50px 0px;
+                        width: inherit;
+                        margin: 0;
+                    }
 
-            @-ms-keyframes MoveUpDown {
-                0% {
-                    padding-top: 0;
-                }
+                    #profile-img {
+                        border-style: solid;
+                        border-color: #dedede;
+                        border-width: 10px;
+                        border-radius: 50%;
+                    }
 
-                50% {
-                    padding-top: 10px;
-                }
+                    .profile-font {
+                        font-size: 20px;
+                    }
+            /* Experience */
+                    #Experience {
+                        background: #dedede;
+                        padding: 50px 0px 50px 0px;
+                        width: inherit;
+                        margin: 0;
+                    }
+                    
+                    .table { border: none; }
+                    .table tbody > tr > th { border: none; }
+                    table > tbody > tr > th > h5 > ul > li {
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
 
-                100% {
-                    padding-top: 1px;
-                }
-            }
+                    .exp-dates {
+                        font-weight: bold;
+                        display:table-cell;
+                        vertical-align:middle;
+                        float:none;
+                        border-style: solid;
+                        border: 0px 0px 10px 0px;
+                        border-color: black;
+                    }
 
-            #Landing {
-                background: no-repeat center right fixed url("assets/images/landing-bg.jpg");
-                background-size: cover;
-                position: relative;
-                height: 100%;
-                height: 100vh;
-                margin: 0;
-                overflow: hidden;
-            }
+                    #Skills {
+                        background: white;
+                        padding: 50px 0px 50px 0px;
+                        width: inherit;
+                        margin: 0;
+                    }
 
-            .landing-text {
-                position: absolute;
-                margin-top: 35vh;
-                z-index: 2;
-                color: white;
-            }
+                    .fa-star {
+                        color: #4c5b61 !important;
+                    }
 
-            .landing-main-txt {
-                font-weight: bold;
-                font-size: 60px;
-            }
+                    .star-off {
+                        color: #aeaeae !important;
+                        font-size: .95em;
+                    }
+            /* Project */
+                    #Project {
+                        background: #dedede;
+                        padding: 50px 0px 50px 0px;
+                        width: inherit;
 
-            .landing-hr { 
-                width: 35em;
-                transition: ease-in-out .2s;
-                border-color: white !important;
-            }
-            .landing-subtitle { color: white; }
+                    }
 
-            .landing-overlay {
-                background-color: #4c5b61;
-                position: absolute;
-                opacity: 0.5;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-            }
+                    .project-overlay {
+                        width: calc(100% - 30px);
+                        height: 100%;
+                        color: white;
+                        margin: 0;
+                        padding: 10px;
+                        background: #23637c;
+                        position: absolute;
+                        opacity: 0;
+                        transition: opacity ease-in 0.2s;
+                    }
 
-            #Profile {
-                background: white;
-                padding: 50px 0px 50px 0px;
-                width: inherit;
-                margin: 0;
-            }
+                    .project-overlay:hover {
+                        opacity: .8;
+                    }
 
-            #profile-img {
-                border-style: solid;
-                border-color: #dedede;
-                border-width: 10px;
-                border-radius: 50%;
-            }
+                    .project-hr {
+                        width: 80%;
+                    }
+            /* Contact */
+                    #Contact {
+                        background: #292929;
+                        padding: 50px 0px 300px 0px;
+                        width: inherit;
+                        margin: 0;
+                        color: #aeaeae;
+                    }
+                    
+                    .contact-link {
+                        color: #aeaeae;
+                        font-size: 20px;
+                    }
 
-            .profile-font {
-                font-size: 20px;
-            }
-            #Experience {
-                background: #dedede;
-                padding: 50px 0px 50px 0px;
-                width: inherit;
-                margin: 0;
-            }
-            
-            .table { border: none; }
-            .table tbody > tr > th { border: none; }
-            table > tbody > tr > th > h5 > ul > li {
-                margin-top: 5px;
-                margin-bottom: 5px;
-            }
+                    .contact-header {
+                        color: #aeaeae;
+                        font-size: 50px;
+                    }
 
-            .exp-dates {
-                font-weight: bold;
-                display:table-cell;
-                vertical-align:middle;
-                float:none;
-                border-style: solid;
-                border: 0px 0px 10px 0px;
-                border-color: black;
-            }
+                    .inactiveLink {
+                        pointer-events: none;
+                        cursor: default;
+                    }
 
-            #Skills {
-                background: white;
-                padding: 50px 0px 50px 0px;
-                width: inherit;
-                margin: 0;
-            }
+            /* Media Queries */
+                    @media only screen and (max-width: 1200px) { 
+                        #left-profile {
+                            margin-bottom: 25px;
+                            text-align: center !important;
+                        }
 
-            .fa-star {
-                color: #4c5b61 !important;
-            }
+                        #right-profile {
+                            margin-top: 50px;
+                            text-align: center !important;
+                        }
+                        .second-project {
+                            margin-top: 20px;
+                        }
+                    }
 
-            .star-off {
-                color: #aeaeae !important;
-                font-size: .95em;
-            }
+                    @media only screen and (max-width: 992px) {
+                        .header {
+                            margin-top: 50px;
+                        }
+                        
+                        .landing-hr {
+                            width: 15em;
+                        }
+                        
+                        #Navigation {
+                            visibility: hidden;
+                        }
+                        #nav-indicator {
+                            width: 100%;
+                            right: 0;
+                            border-radius: 0;
+                        }
 
-            #project {
-                background: #dedede;
-                padding: 50px 0px 50px 0px;
-                width: inherit;
+                        #nav-container-mobile {
+                            visibility: visible;
+                        }
 
-            }
+                        #nav-indicator-mobile {
+                            visibility: visible;
+                        }
 
-            .project-overlay {
-                width: calc(100% - 30px);
-                height: 100%;
-                color: white;
-                margin: 0;
-                padding: 10px;
-                background: #23637c;
-                position: absolute;
-                opacity: 0;
-                transition: opacity ease-in 0.2s;
-            }
+                    }
 
-            .project-overlay:hover {
-                opacity: .8;
-            }
-
-            .project-hr {
-                width: 80%;
-            }
-
-            #Contact {
-                background: #292929;
-                padding: 50px 0px 300px 0px;
-                width: inherit;
-                margin: 0;
-                color: #aeaeae;
-            }
-            
-            .contact-link {
-                color: #aeaeae;
-                font-size: 20px;
-            }
-
-            .contact-header {
-                color: #aeaeae;
-                font-size: 50px;
-            }
-
-            .inactiveLink {
-                pointer-events: none;
-                cursor: default;
-            }
-
-            @media only screen and (max-width: 1200px) { 
-                #left-profile {
-                    margin-bottom: 25px;
-                    text-align: center;
-                }
-
-                #right-profile {
-                    margin-top: 50px;
-                    text-align: center;
-                }
-                .second-project {
-                    margin-top: 20px;
-                }
-            }
-
-            @media only screen and (max-width: 992px) {
-                .header {
-                    margin-top: 50px;
-                }
-                
-                .landing-hr {
-                    width: 15em;
-                }
-                
-                #Navigation {
-                    visibility: hidden;
-                }
-                #nav-indicator {
-                    width: 100%;
-                    right: 0;
-                    border-radius: 0;
-                }
-
-                #nav-container-mobile {
-                    visibility: visible;
-                }
-
-                #nav-indicator-mobile {
-                    visibility: visible;
-                }
-
-            }
-
-            @media only screen and (max-width: 768px) {
-                
-            }
-
+                    @media only screen and (max-width: 768px) {
+                        
+                    }
+            /* End of CSS */
         </style>
     </head>
     <body>
-        <div class="container-fluid">
-            <!-- Landing Section -->
-            <div class="row" id="Landing">
-                <div class="col-xs-12 col-lg-12 text-center align-items-center landing-text">
-                    <h1 class="landing-main-txt">Ryan Hults</h1>
-                    <hr class="landing-hr">
-                    <h3 class="landing-subtitle">Interactive Resume</h3>
+        <!-- Landing Section -->
+        <div class="row" id="Landing">
+            <div class="col-xs-12 col-lg-12 text-center align-items-center landing-text">
+                <h1 class="landing-main-txt">Ryan Hults</h1>
+                <hr class="landing-hr">
+                <h3 class="landing-subtitle">Interactive Resume</h3>
+            </div>
+            <div class="landing-overlay"></div>
+            <a href="#Profile" style="color:white;" id="nav-indicator-link">
+                <div class="text-center" id="nav-indicator">
+                    <i class="fas fa-angle-down nav-indicator-anim"></i>
                 </div>
-                <div class="landing-overlay"></div>
-                <a href="#Profile" style="color:white;" id="nav-indicator-link">
-                    <div class="text-center" id="nav-indicator">
-                        <i class="fas fa-angle-down nav-indicator-anim"></i>
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="" id="Navigation">
+            <div class="container center-block" id="nav-container">
+                <ul class="list-unstyled nav-list">
+                    <li class="nav-box text-center" id="nav-profile-link">
+                        <a class="nav-link nav-link-desktop" href="#Profile">
+                            <div class="nav-link-container-desktop">Profile</div>
+                        </a>
+                    </li>
+                    <li class="row nav-box text-center" id="nav-experience-link">
+                        <a class="nav-link nav-link-desktop" href="#Experience">
+                            <div class="nav-link-container-desktop">Experience</div>
+                        </a>
+                    </li>
+                    <li class="row nav-box text-center" id="nav-skills-link">
+                        <a class="nav-link nav-link-desktop" href="#Skills">
+                            <div class="nav-link-container-desktop">Skills</div>
+                        </a>
+                    </li>
+                    <li class="row nav-box text-center" id="nav-project-link">
+                        <a class="nav-link nav-link-desktop" href="#Project">
+                            <div class="nav-link-container-desktop">Projects</div>
+                        </a>
+                    </li>
+                    <li class="row nav-box text-center" id="nav-contact-link">
+                        <a class="nav-link nav-link-desktop" href="#Contact">
+                            <div class="nav-link-container-desktop">Contact</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="navbar navbar-expand nav-pill navbar-dark" id="nav-container-mobile" role="navigation">
+            <div class="container-fluid">
+                <ul class="nav nav-fill w-100">
+                    <li class="nav-item" id="nav-profile-link-mobile">
+                        <a class="nav-link" href="#Profile">
+                            <div class="nav-link-container-mobile">Profile</div>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-experience-link-mobile">
+                        <a class="nav-link" href="#Experience">
+                            <div class="nav-link-container-mobile">Experience</div>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-skills-link-mobile">
+                        <a class="nav-link" href="#Skills">
+                            <div class="nav-link-container-mobile">Skills</div>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-project-link-mobile">
+                        <a class="nav-link" href="#Project">
+                            <div class="nav-link-container-mobile">Projects</div>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav-contact-link-mobile">
+                        <a class="nav-link" href="#Contact">
+                            <div class="nav-link-container-mobile">Contact</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="row" id="Profile">
+            <div class="col-12">
+                <h2 class="text-center header">Profile</h2>
+                <br />
+            </div>
+            <div class="col-8 col-sm-8 col-lg-3 offset-2 offset-sm-2 offset-lg-2 text-right" id="left-profile">
+                <h2>About</h2>
+                <p class="profile-font">I am a recent graduate from Electronic Systems Engineering program at Texas A&M University. I have a strong foundation in back-end technologies and a passion for front-end web development.</p>
+            </div>
+            <div class="col-xs-8 col-sm-12 col-lg-2 offset-xs-2 offset-sm-0 profile-img align-items-center">
+                <img class="img-fluid mx-auto d-block" id="profile-img" src="https://ryanthults.github.io/assets/images/me2.jpg" alt="A picture of me" />
+            </div>
+            <div class="col-xs-8 col-sm-12 col-lg-4 offset-xs-2 offset-sm-0 text-left" id="right-profile">
+                <h2>Details</h2>
+                <p class="profile-font">
+                    <b>Name:</b><br/>
+                    Ryan Thomas Hults<br/>
+                    <b>Age:</b><br/>
+                    24 Years<br/>
+                    <b>Location:</b><br/>
+                    League City, TX
+                </p>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="row" id="Experience">
+            <div class="col-12">
+                <h2 class="text-center header">Experience</h2>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3">
+                <hr>
+                <h4>Education</h4>
+                <table class="table">
+                    <tr>
+                        <th>Texas A&M University<br />
+                            <h5>August 2011 - December 2017</h5>
+                        </th>
+                        <th>B.S. Electronic Systems Engineering<br />
+                            <h5>Designed and developed an embedded wireless monitoring system to monitor the vital statistics of cattle.</h5>
+                        </th>
+                    </tr>
+                </table>
+                <hr>
+                <h4>Careers</h4>
+                <table class="table exp-table">
+                    <tr>
+                        <th>Texas A&M University<br />
+                            <h5>September 2014 - October 2017</h5>
+                        </th>
+                        <th>Student Technician<br />
+                            <h5>
+                                <ul>
+                                    <li>Troubleshot both software and hardware problems on both Windows (Dell) and Apple computers</li>
+                                    <li>Documented and organized Inventory for departmental property</li>
+                                    <li>Assisted in the development of software tools used to increase inventory efficiency</li>
+                                    <li>Prepared surplus hardware for release within state security specifications</li>
+                                    <li>Managed academic specific software packages</li>
+                                    <li>Maintained 30 computers for student access lab</li>
+                                    <li>Created and maintained Windows images deployed to over 100 workstations</li>
+                                    <li>Set up and maintained group policy objects for multiple user-groups across Windows 7 and Windows 10</li>
+                                    <li>Created documentation for use of the Windows Automated Installation Kit to ensure proper migration of Windows user accounts</li>
+                                </ul>
+                            </h5>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Chrysalis Premier Productions<br />
+                            <h5>March - August 2014</h5>
+                        </th>
+                        <th>Assistant Director of Information Technology<br />
+                            <h5>
+                                <ul>
+                                    <li>Supported workstation and POS systems</li>
+                                    <li>Provided instruction on fundamental troubleshooting and diagnostic skills</li>
+                                    <li>Advised management on matters regarding electronics and communications</li>
+                                </ul>
+                            </h5>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Seabrook Seafood Inc<br />
+                            <h5>2012-2013</h5>
+                        </th>
+                        <th>Senior Technical Support Technician<br />
+                            <h5>
+                                <ul>
+                                    <li>Assessed and handled all workstation and network equipment issues</li>
+                                    <li>Assisted with computer and technical questions</li>
+                                    <li>Replaced or rebuilt workstations and other related equipment</li>
+                                    <li>Instructed colleagues on fundamental computer troubleshooting and diagnostic step</li>
+                                    <li>Provided instruction on fundamental troubleshooting and diagnostic skills</li>
+                                    <li>Advised management on matters regarding electronics and communications</li>
+                                </ul>
+                            </h5>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="row" id="Skills">
+            <div class="col-12">
+                <h2 class="text-center header">Skills</h2>
+            </div>
+            <div class="col-xs-10 col-sm-8 offset-xs-1 offset-sm-2 skill-tables">
+                <hr>
+                <h4>Programming Languages</h4> 
+                <div class="row">         
+                    <div class="col-lg-6">             
+                        <table class="table" id="skill-table-1">
+                            <tr>
+                                <th class="col-xs-6"><h6>HTML(5)</h6></th>
+                                <th class="col-xs-6 text-right"><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>CSS</h6></th>
+                                <th class="text-right"><h6><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>Twitter Bootstrap</h6></th>
+                                <th class="text-right"><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>C</h6></th>
+                                <th class="text-right"><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>Javascript</h6></th>
+                                <th class="text-right"><h6><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            
+                            <tr>
+                                <th><h6>NodeJS</h6></th>
+                                <th class="text-right"><h6><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star "></i>
+                                        <i class="fas fa-star star-off"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                        </table>
                     </div>
-                </a>
-            </div>
-
-            <!-- Navigation -->
-            <div class="" id="Navigation">
-                <div class="container center-block" id="nav-container">
-                    <ul class="list-unstyled nav-list">
-                        <li class="nav-box text-center" id="nav-profile-link">
-                            <a class="nav-link" href="#Profile">
-                                <div class="nav-link-container-desktop">Profile</div>
-                            </a>
-                        </li>
-                        <li class="row nav-box text-center" id="nav-experience-link">
-                            <a class="nav-link" href="#Experience">
-                                <div class="nav-link-container-desktop">Experience</div>
-                            </a>
-                        </li>
-                        <li class="row nav-box text-center" id="nav-skills-link">
-                            <a class="nav-link" href="#Skills">
-                                <div class="nav-link-container-desktop">Skills</div>
-                            </a>
-                        </li>
-                        <li class="row nav-box text-center" id="nav-project-link">
-                            <a class="nav-link" href="#project">
-                                <div class="nav-link-container-desktop">Projects</div>
-                            </a>
-                        </li>
-                        <li class="row nav-box text-center" id="nav-contact-link">
-                            <a class="nav-link" href="#Contact">
-                                <div class="nav-link-container-desktop">Contact</div>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="col-lg-6">
+                        <table class="table" id="skill-table-2">
+                            <tr>
+                                <th class="col-xs-6"><h6>MySQL</h6></th>
+                                <th class="col-xs-6 text-right"><h6><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>PHP</h6></th>
+                                <th class="text-right"><h6><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>CLI</h6></th>
+                                <th class="text-right"><h6><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            
+                            <tr>
+                                <th><h6>Java</h6></th>
+                                <th class="text-right"><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>Python</h6></th>
+                                <th class="text-right"><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>JQuery</h6></th>
+                                <th class="text-right"><h6><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Navigation -->
-            <div class="" id="Navigation-Horizontal">
-                <div class="container" id="nav-container-mobile">
-                    <ul class="list-unstyled list-inline text-center d-flex" id="nav-list-mobile">
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-profile-link-mobile">
-                            <a class="nav-link" href="#Profile">
-                                <div class="nav-link-container-mobile">Profile</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-experience-link-mobile">
-                            <a class="nav-link" href="#Experience">
-                                    <div class="nav-link-container-mobile">Experience</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-skills-link-mobile">
-                            <a class="nav-link" href="#Skills">
-                                    <div class="nav-link-container-mobile">Skills</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-project-link-mobile">
-                            <a class="nav-link" href="#project">
-                                <div class="nav-link-container-mobile">Projects</div>
-                            </a>
-                        </li>
-                        <li class="list-inline-item text-center nav-link-horizontal" id="nav-contact-link-mobile">
-                            <a class="nav-link" href="#Contact">
-                                <div class="nav-link-container-mobile">Contact</div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Profile Section -->
-            <div class="row" id="Profile">
-                <div class="col-12">
-                    <h2 class="text-center header">Profile</h2>
-                    <br />
-                </div>
-                <div class="col-8 col-sm-8 col-lg-3 offset-2 offset-sm-2 offset-lg-2 text-right" id="left-profile">
-                    <h2>About</h2>
-                    <p class="profile-font">I am a recent graduate from Electronic Systems Engineering program at Texas A&M University. I have a strong foundation in back-end technologies and a passion for front-end web development.</p>
-                </div>
-                <div class="col-xs-8 col-sm-12 col-lg-2 offset-xs-2 offset-sm-0 profile-img align-items-center">
-                    <img class="img-fluid mx-auto d-block" id="profile-img" src="https://ryanthults.github.io/assets/images/me2.jpg" alt="A picture of me" />
-                </div>
-                <div class="col-xs-8 col-sm-12 col-lg-4 offset-xs-2 offset-sm-0 text-left" id="right-profile">
-                    <h2>Details</h2>
-                    <p class="profile-font">
-                        <b>Name:</b><br/>
-                        Ryan Thomas Hults<br/>
-                        <b>Age:</b><br/>
-                        24 Years<br/>
-                        <b>Location:</b><br/>
-                        League City, TX
-                    </p>
-                </div>
-            </div>
-
-            <!-- Experience Section -->
-            <div class="row" id="Experience">
-                <div class="col-12">
-                    <h2 class="text-center header">Experience</h2>
-                </div>
-                <div class="col-xs-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3">
-                    <hr>
-                    <h4>Education</h4>
-                    <table class="table">
-                        <tr>
-                            <th>Texas A&M University<br />
-                                <h5>August 2011 - December 2017</h5>
-                            </th>
-                            <th>B.S. Electronic Systems Engineering<br />
-                                <h5>Designed and developed an embedded wireless monitoring system to monitor the vital statistics of cattle.</h5>
-                            </th>
-                        </tr>
-                    </table>
-                    <hr>
-                    <h4>Careers</h4>
-                    <table class="table exp-table">
-                        <tr>
-                            <th>Texas A&M University<br />
-                                <h5>September 2014 - October 2017</h5>
-                            </th>
-                            <th>Student Technician<br />
-                                <h5>
-                                    <ul>
-                                        <li>Troubleshot both software and hardware problems on both Windows (Dell) and Apple computers</li>
-                                        <li>Documented and organized Inventory for departmental property</li>
-                                        <li>Assisted in the development of software tools used to increase inventory efficiency</li>
-                                        <li>Prepared surplus hardware for release within state security specifications</li>
-                                        <li>Managed academic specific software packages</li>
-                                        <li>Maintained 30 computers for student access lab</li>
-                                        <li>Created and maintained Windows images deployed to over 100 workstations</li>
-                                        <li>Set up and maintained group policy objects for multiple user-groups across Windows 7 and Windows 10</li>
-                                        <li>Created documentation for use of the Windows Automated Installation Kit to ensure proper migration of Windows user accounts</li>
-                                    </ul>
-                                </h5>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Chrysalis Premier Productions<br />
-                                <h5>March - August 2014</h5>
-                            </th>
-                            <th>Assistant Director of Information Technology<br />
-                                <h5>
-                                    <ul>
-                                        <li>Supported workstation and POS systems</li>
-                                        <li>Provided instruction on fundamental troubleshooting and diagnostic skills</li>
-                                        <li>Advised management on matters regarding electronics and communications</li>
-                                    </ul>
-                                </h5>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Seabrook Seafood Inc<br />
-                                <h5>2012-2013</h5>
-                            </th>
-                            <th>Senior Technical Support Technician<br />
-                                <h5>
-                                    <ul>
-                                        <li>Assessed and handled all workstation and network equipment issues</li>
-                                        <li>Assisted with computer and technical questions</li>
-                                        <li>Replaced or rebuilt workstations and other related equipment</li>
-                                        <li>Instructed colleagues on fundamental computer troubleshooting and diagnostic step</li>
-                                        <li>Provided instruction on fundamental troubleshooting and diagnostic skills</li>
-                                        <li>Advised management on matters regarding electronics and communications</li>
-                                    </ul>
-                                </h5>
-                            </th>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Skills Section -->
-            <div class="row" id="Skills">
-                <div class="col-12">
-                    <h2 class="text-center header">Skills</h2>
-                </div>
-                <div class="col-xs-10 col-sm-8 offset-xs-1 offset-sm-2 skill-tables">
-                    <hr>
-                    <h4>Programming Languages</h4> 
-                    <div class="row">         
-                        <div class="col-lg-6">             
+                <hr>
+                <h4>Tools</h4>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <table class="table" id="skill-table-1">
+                            <tr>
+                                <th class="col-xs-6"><h6>MS Office (8 years)</h6></th>
+                                <th class="col-xs-6 text-right"><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>Windows (8 years)</h6></th>
+                                <th class="text-right"><h6><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>Adobe Photoshop (6 years)</h6></th>
+                                <th class="text-right"><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th><h6>Microsoft Active Directory (3 years)</h6></th>
+                                <th class="text-right"><h6>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                        <i class="fas fa-star star-off"></i>
+                                    </h6>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-lg-6">
                             <table class="table" id="skill-table-1">
                                 <tr>
-                                    <th class="col-xs-6"><h6>HTML(5)</h6></th>
+                                    <th class="col-xs-6"><h6>Microsoft Visio (3 years)</h6></th>
                                     <th class="col-xs-6 text-right"><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h6>CSS</h6></th>
-                                    <th class="text-right"><h6><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h6>Twitter Bootstrap</h6></th>
-                                    <th class="text-right"><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h6>C</h6></th>
-                                    <th class="text-right"><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h6>Javascript</h6></th>
-                                    <th class="text-right"><h6><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                
-                                <tr>
-                                    <th><h6>NodeJS</h6></th>
-                                    <th class="text-right"><h6><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star "></i>
-                                            <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="col-lg-6">
-                            <table class="table" id="skill-table-2">
-                                <tr>
-                                    <th class="col-xs-6"><h6>MySQL</h6></th>
-                                    <th class="col-xs-6 text-right"><h6><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
                                             <i class="fas fa-star star-off"></i>
                                             <i class="fas fa-star star-off"></i>
                                         </h6>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h6>PHP</h6></th>
+                                    <th><h6>Notepad++ (4 years)</h6></th>
                                     <th class="text-right"><h6><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -829,93 +939,7 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><h6>CLI</h6></th>
-                                    <th class="text-right"><h6><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                
-                                <tr>
-                                    <th><h6>Java</h6></th>
-                                    <th class="text-right"><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h6>Python</h6></th>
-                                    <th class="text-right"><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h6>JQuery</h6></th>
-                                    <th class="text-right"><h6><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <hr>
-                    <h4>Tools</h4>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <table class="table" id="skill-table-1">
-                                <tr>
-                                    <th class="col-xs-6"><h6>MS Office (8 years)</h6></th>
-                                    <th class="col-xs-6 text-right"><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h6>Windows (8 years)</h6></th>
-                                    <th class="text-right"><h6><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h6>Adobe Photoshop (6 years)</h6></th>
-                                    <th class="text-right"><h6>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star star-off"></i>
-                                        </h6>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><h6>Microsoft Active Directory (3 years)</h6></th>
+                                    <th><h6>Visual Studio Code (1 year)</h6></th>
                                     <th class="text-right"><h6>
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -927,135 +951,97 @@
                                 </tr>
                             </table>
                         </div>
-                        <div class="col-lg-6">
-                                <table class="table" id="skill-table-1">
-                                    <tr>
-                                        <th class="col-xs-6"><h6>Microsoft Visio (3 years)</h6></th>
-                                        <th class="col-xs-6 text-right"><h6>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star star-off"></i>
-                                                <i class="fas fa-star star-off"></i>
-                                            </h6>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th><h6>Notepad++ (4 years)</h6></th>
-                                        <th class="text-right"><h6><h6>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star star-off"></i>
-                                                <i class="fas fa-star star-off"></i>
-                                            </h6>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th><h6>Visual Studio Code (1 year)</h6></th>
-                                        <th class="text-right"><h6>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star star-off"></i>
-                                                <i class="fas fa-star star-off"></i>
-                                            </h6>
-                                        </th>
-                                    </tr>
-                                </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- project Section -->
+        <div class="row" id="Project">
+            <div class="col-12">
+                <h2 class="text-center header">Projects</h2>
+            </div>
+            <div class="col-xs-12 col-sm-8 offset-sm-2">
+                <br />
+                <div class="row">
+                    <div class="col-xs-12 col-lg">
+                        <a href="http://nphase.xyz/" target="__blank" >
+                            <div class="project-overlay align-content-center text-center">
+                                <h3>nPhase.xyz</h3>
+                                <hr class="project-hr">
+                                <p>Created a mobile responsive webpage to showcase my senior design project.</p>
                             </div>
+                        </a>
+                        <img class="img-fluid" src="assets/images/nphase-thumb.png" />
+                    </div>
+                    <div class="w-100 d-block d-lg-none"><br/></div>
+                    <div class="col-xs-12 col-lg">
+                        <a href="http://temp.link" target="__blank" >
+                            <div class="project-overlay text-center">
+                                <h3>temp.link</h3>
+                                <hr class="project-hr">
+                                <p>A placeholder for future projects</p>
+                            </div>
+                        </a>
+                        <img class="img-fluid" src="assets/images/ph-thumb.png" />
+                    </div>
+                    <div class="w-100"><br/></div>
+                    <div class="col-xs-12 col-lg">
+                        <a href="http://temp.link" target="__blank">
+                            <div class="project-overlay text-center">
+                                <h3>temp.link</h3>
+                                <hr class="project-hr">
+                                <p>A placeholder for future projects</p>
+                            </div>
+                        </a>
+                        <img class="img-fluid" src="assets/images/ph-thumb.png" />
+                    </div>
+                    <div class="w-100 d-block d-lg-none"><br/></div>
+                    <div class="col-xs-12 col-lg">
+                        <a href="http://temp.link" target="__blank" >
+                            <div class="project-overlay text-center">
+                                <h3>temp.link</h3>
+                                <hr class="project-hr">
+                                <p>A placeholder for future projects</p>
+                            </div>
+                        </a>
+                        <img class="img-fluid" src="assets/images/ph-thumb.png" />
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- project Section -->
-            <div class="row" id="project">
-                <div class="col-12">
-                    <h2 class="text-center header">Projects</h2>
-                </div>
-                <div class="col-xs-12 col-sm-8 col-lg-6 offset-sm-2 offset-lg-3">
+        <!-- Contact Section -->
+        <div class="row" id="Contact">
+            <div class="col-12">
+                <h2 class="contact-header text-center">Contact</h2>
+            </div>
+            <div class="col-xs-12 col-lg-6 offset-lg-3" id="contact-column">
+                <hr>
+                <div class="row">
+                    <div class="col-xs-12 col-lg-6 text-center">
+                            <a href="mailto:contact@ryanthults.com" target="__blank" class="contact-link"><i class="fas fa-envelope"></i> contact@ryanthults.com</a> 
+                        </div>
+                        <div class="col-xs-12 col-lg-6 text-center">
+                            <a href="https://www.linkedin.com/in/rhults/" target="__blank" class="contact-link"><i class="fab fa-linkedin"></i> Linkedin.com/in/rhults</a>
+                        </div>
+                    </div>
                     <br />
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <a href="http://nphase.xyz/" target="__blank" >
-                                <div class="project-overlay align-content-center text-center">
-                                    <h3>nPhase.xyz</h3>
-                                    <hr class="project-hr">
-                                    <p>Created a mobile responsive webpage to showcase my senior design project.</p>
-                                </div>
-                            </a>
-                            <img class="img-fluid" src="assets/images/nphase-thumb.png" />
-                        </div>
-                        <div class="w-100 d-block d-md-none"><br/></div>
-                        <div class="col-xs-12 col-md-6">
-                            <a href="http://temp.link" target="__blank" >
-                                <div class="project-overlay text-center">
-                                    <h3>temp.link</h3>
-                                    <hr class="project-hr">
-                                    <p>A placeholder for future projects</p>
-                                </div>
-                            </a>
-                            <img class="img-fluid" src="assets/images/ph-thumb.png" />
-                        </div>
-                        <div class="w-100"><br/></div>
-                        <div class="col-xs-12 col-lg">
-                            <a href="http://temp.link" target="__blank">
-                                <div class="project-overlay text-center">
-                                    <h3>temp.link</h3>
-                                    <hr class="project-hr">
-                                    <p>A placeholder for future projects</p>
-                                </div>
-                            </a>
-                            <img class="img-fluid" src="assets/images/ph-thumb.png" />
-                        </div>
-                        <div class="w-100 d-block d-md-none"><br/></div>
-                        <div class="col-xs-12 col-lg">
-                            <a href="http://temp.link" target="__blank" >
-                                <div class="project-overlay text-center">
-                                    <h3>temp.link</h3>
-                                    <hr class="project-hr">
-                                    <p>A placeholder for future projects</p>
-                                </div>
-                            </a>
-                            <img class="img-fluid" src="assets/images/ph-thumb.png" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Section -->
-            <div class="row" id="Contact">
-                <div class="col-12">
-                    <h2 class="contact-header text-center">Contact</h2>
-                </div>
-                <div class="col-xs-12 col-lg-6 offset-lg-3" id="contact-column">
-                    <hr>
                     <div class="row">
                         <div class="col-xs-12 col-lg-6 text-center">
-                                <a href="mailto:contact@ryanthults.com" target="__blank" class="contact-link"><i class="fas fa-envelope"></i> contact@ryanthults.com</a> 
-                            </div>
-                            <div class="col-xs-12 col-lg-6 text-center">
-                                <a href="https://www.linkedin.com/in/rhults/" target="__blank" class="contact-link"><i class="fab fa-linkedin"></i> Linkedin.com/in/rhults</a>
-                            </div>
+                                <a href="https://github.com/RyantHults" target="__blank" class="contact-link"><i class="fab fa-github"></i> github.com/RyantHults</a>
                         </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-xs-12 col-lg-6 text-center">
-                                    <a href="https://github.com/RyantHults" target="__blank" class="contact-link"><i class="fab fa-github"></i> github.com/RyantHults</a>
-                            </div>
-                            <div class="col-xs-12 col-lg-6 text-center">
-                                    <a href="https://twitter.com/ryanthults" target="__blank" class="contact-link"><i class="fab fa-twitter-square"></i> twitter.com/ryanthults</a>
-                            </div>
-                        </div>
-                        <br />
-                        <hr>
-                        <div class="col-12 text-center">
-                            <h5>© Ryan Hults | v1.55 | Design: <a href="http://pascalvangemert.nl" target="__blank" style="color:#aeaeae">Pascal Van Gemert</a>
-                            </h5>
+                        <div class="col-xs-12 col-lg-6 text-center">
+                                <a href="https://twitter.com/ryanthults" target="__blank" class="contact-link"><i class="fab fa-twitter-square"></i> twitter.com/ryanthults</a>
                         </div>
                     </div>
-                </div>  
-            </div>
+                    <br />
+                    <hr>
+                    <div class="col-12 text-center">
+                        <h5>© Ryan Hults | v1.55 | Design: <a href="http://pascalvangemert.nl" target="__blank" style="color:#aeaeae">Pascal Van Gemert</a>
+                        </h5>
+                    </div>
+                </div>
+            </div>  
         </div>
     </body>
 </html>
