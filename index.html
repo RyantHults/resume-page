@@ -45,18 +45,18 @@
                             navboxh.removeClass('nav-float-mobile');
                         }
 
-                        //profile
-                        if(exper > 0) {
+                                                //profile
+                                                if(exper > 0) {
                             var element = jQuery('#nav-profile-link');
                             var elementh = jQuery('#nav-profile-link-mobile')
                             element.siblings('li').removeClass('nav-active inactiveLink');
                             elementh.siblings('li').removeClass('nav-active inactiveLink');
-                            element.siblings('li').children('a').css('color','#aeaeae');
-                            elementh.siblings('li').children('a').css('color','#aeaeae');
+                            element.siblings('li').children('a').removeClass('nav-link-active');
+                            elementh.siblings('li').children('a').removeClass('nav-link-active');
                             element.addClass('nav-active inactiveLink');
                             elementh.addClass('nav-active inactiveLink');
-                            element.children('a').css('color','white');
-                            elementh.children('a').css('color','white');
+                            element.children('a').addClass("nav-link-active");
+                            elementh.children('a').addClass("nav-link-active");
                         }
                         //experience
                         if(exper < 1 && skill > 0) {
@@ -64,12 +64,12 @@
                             var elementh = jQuery('#nav-experience-link-mobile');
                             element.siblings('li').removeClass('nav-active inactiveLink');
                             elementh.siblings('li').removeClass('nav-active inactiveLink');
-                            element.siblings('li').children('a').css('color','#aeaeae');
-                            elementh.siblings('li').children('a').css('color','#aeaeae');
+                            element.siblings('li').children('a').removeClass('nav-link-active');
+                            elementh.siblings('li').children('a').removeClass('nav-link-active');
                             element.addClass('nav-active inactiveLink');
                             elementh.addClass('nav-active inactiveLink');
-                            element.children('a').css('color','white');
-                            elementh.children('a').css('color','white');
+                            element.children('a').addClass("nav-link-active");
+                            elementh.children('a').addClass("nav-link-active");
                         }
                         //skills
                         if(skill < 1 && portf > 0) {
@@ -77,12 +77,12 @@
                             var elementh = jQuery('#nav-skills-link-mobile');
                             element.siblings('li').removeClass('nav-active inactiveLink');
                             elementh.siblings('li').removeClass('nav-active inactiveLink');
-                            element.siblings('li').children('a').css('color','#aeaeae');
-                            elementh.siblings('li').children('a').css('color','#aeaeae');
+                            element.siblings('li').children('a').removeClass('nav-link-active');
+                            elementh.siblings('li').children('a').removeClass('nav-link-active');
                             element.addClass('nav-active inactiveLink');
                             elementh.addClass('nav-active inactiveLink');
-                            element.children('a').css('color','white');
-                            elementh.children('a').css('color','white');
+                            element.children('a').addClass("nav-link-active");
+                            elementh.children('a').addClass("nav-link-active");
                         }
                         //project
                         if(portf < 1) {
@@ -90,12 +90,12 @@
                             var elementh = jQuery('#nav-project-link-mobile');
                             element.siblings('li').removeClass('nav-active inactiveLink');
                             elementh.siblings('li').removeClass('nav-active inactiveLink');
-                            element.siblings('li').children('a').css('color','#aeaeae');
-                            elementh.siblings('li').children('a').css('color','#aeaeae');
+                            element.siblings('li').children('a').removeClass('nav-link-active');
+                            elementh.siblings('li').children('a').removeClass('nav-link-active');
                             element.addClass('nav-active inactiveLink');
                             elementh.addClass('nav-active inactiveLink');
-                            element.children('a').css('color','white');
-                            elementh.children('a').css('color','white');
+                            element.children('a').addClass("nav-link-active");
+                            elementh.children('a').addClass("nav-link-active");
                         }
                                            
                         //contact
@@ -104,12 +104,12 @@
                             var elementh = jQuery('#nav-contact-link-mobile');
                             element.siblings('li').removeClass('nav-active inactiveLink');
                             elementh.siblings('li').removeClass('nav-active inactiveLink');
-                            element.siblings('li').children('a').css('color','#aeaeae');
-                            elementh.siblings('li').children('a').css('color','#aeaeae');
+                            element.siblings('li').children('a').removeClass('nav-link-active');
+                            elementh.siblings('li').children('a').removeClass('nav-link-active');
                             element.addClass('nav-active inactiveLink');
                             elementh.addClass('nav-active inactiveLink');
-                            element.children('a').css('color','white');
-                            elementh.children('a').css('color','white');
+                            element.children('a').addClass("nav-link-active");
+                            elementh.children('a').addClass("nav-link-active");
                         }
                     });
                     //desktop navbar scroll animation
