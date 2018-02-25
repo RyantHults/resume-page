@@ -14,6 +14,20 @@
         <script>
             (function($){
                 $(document).ready(function(){
+
+                    //Search for keywords within the user agent string.  When a match is found, add a corresponding class to the html element and return.  (Inspired by http://stackoverflow.com/a/10137912/114558)
+                    function addUserAgentClass(keywords) {
+                        for(var i = 0; i < keywords.length; i++) {
+                            if(navigator.userAgent.indexOf(keywords[i]) != -1) {
+                                $(".nav-link-container-mobile").css("height","25px");
+                                return; //Once we find and process a matching keyword, return to prevent less "specific" classes from being added
+                            }
+                        }
+                    }
+                    //addUserAgentClass(["Chrome", "Firefox", "MSIE", "Safari", "Opera", "Mozilla"]); //Browsers listed generally from most-specific to least-specific
+                    //addUserAgentClass(["Android", "iPhone", "iPad", "Linux", "Mac", "Windows"]); //Platforms, also in order of specificity
+                    addUserAgentClass(["iPhone"]);
+
                     $(window).scroll(function() {
                         var navbox = jQuery('#Navigation');
                         var navboxh = jQuery('#nav-container-mobile');
