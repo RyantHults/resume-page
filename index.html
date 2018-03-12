@@ -20,7 +20,7 @@
                     function addUserAgentClass(keywords) {
                         for(var i = 0; i < keywords.length; i++) {
                             if(navigator.userAgent.indexOf(keywords[i]) != -1) {
-                                $(".nav-link-container-mobile").addClass(keyworkds[i]);
+                                $(".nav-link-container-mobile").addClass(keywords[i]);
                                 return; //Once we find and process a matching keyword, return to prevent less "specific" classes from being added
                             }
                         }
@@ -1094,7 +1094,7 @@
                     <hr>
                     <br />
                     <div class="col-12 text-center">
-                        <h5>© Ryan Hults | v2.31 | Inspired by: <a href="http://pascalvangemert.nl" target="__blank" class="contact-link">Pascal Van Gemert</a>
+                        <h5>© Ryan Hults | v2.32 | Inspired by: <a href="http://pascalvangemert.nl" target="__blank" class="contact-link">Pascal Van Gemert</a>
                         </h5>
                     </div>
                 </div>
