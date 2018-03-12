@@ -20,14 +20,13 @@
                     function addUserAgentClass(keywords) {
                         for(var i = 0; i < keywords.length; i++) {
                             if(navigator.userAgent.indexOf(keywords[i]) != -1) {
-                                $(".nav-link-container-mobile").css("height","25px");
+                                $(".nav-link-container-mobile").addClass(keyworkds[i]);
                                 return; //Once we find and process a matching keyword, return to prevent less "specific" classes from being added
                             }
                         }
                     }
-                    //addUserAgentClass(["Chrome", "Firefox", "MSIE", "Safari", "Opera", "Mozilla"]); //Browsers listed generally from most-specific to least-specific
-                    //addUserAgentClass(["Android", "iPhone", "iPad", "Linux", "Mac", "Windows"]); //Platforms, also in order of specificity
-                    addUserAgentClass(["iPhone"]);
+                    addUserAgentClass(["Chrome", "Firefox", "MSIE", "Safari", "Opera", "Mozilla"]); //Browsers listed generally from most-specific to least-specific
+                    addUserAgentClass(["Android", "iPhone", "iPad", "Linux", "Mac", "Windows"]); //Platforms, also in order of specificity
 
                     $(window).scroll(function() {
                         var navbox = jQuery('#Navigation');
@@ -556,7 +555,17 @@
                     @media only screen and (max-width: 768px) {
                         
                     }
-            
+
+            /* Browser Specific CSS */
+                    .Android,
+                    .iPhone,
+                    .iPad {
+                        height: 25px !important;
+                    }
+                    
+                    .Firefox {
+                        height: 100% !important;
+                    }
             /* End of CSS */
         </style>
     </head>
@@ -1046,7 +1055,6 @@
                     </div>
                     <div class="w-100 d-block d-lg-none"><br/></div>
                     <div class="col-xs-12 col-lg">
-                        <a href="https://ryanthults.github.io/WikiNow/" target="" >
                             <div class="project-overlay text-center">
                                 <h3>WikiNow</h3>
                                 <hr class="project-hr">
